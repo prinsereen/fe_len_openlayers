@@ -7,8 +7,9 @@ export const convertDMStoDD = (degrees, minutes, seconds, direction) => {
 };
 
 export const convertDDtoDMS = (dd) => {
-    const degrees = Math.floor(dd);
-    const minutes = Math.floor((dd - degrees) * 60);
-    const seconds = ((dd - degrees - minutes / 60) * 3600).toFixed(2);
+    const degrees = Math.floor(Math.abs(dd)) * Math.sign(dd);
+    const minutes = Math.floor((Math.abs(dd) - Math.floor(Math.abs(dd))) * 60);
+    const seconds = ((Math.abs(dd) - Math.floor(Math.abs(dd)) - minutes / 60) * 3600).toFixed(2);
     return { degrees, minutes, seconds };
 };
+
