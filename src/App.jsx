@@ -1,12 +1,12 @@
+import { MainPage } from "./pages/MainPage";
+import { MapProvider } from "./Context/MapContext";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
-  )
+    <MapProvider>
+      <MainPage />
+    </MapProvider>
+  );
 }
 
-export default App
+export default App;
